@@ -1,21 +1,33 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Random Meal Generator</title>
+    <title>Eai Arai Dee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="randomMeal.js"></script>
+    <style>
+        .navbar {
+            justify-content: flex-start;
+        }
+        #randomMealButton {
+            margin-top: 20px;
+        }
+        body {
+            margin-bottom: 50px; 
+        }
+    </style>
 </head>
 <body>
-    <div class="navbar">
-        <a href="index.html">Eat Arai Dee</a>
-        <a href="menu.html">Menu</a>
+    <div class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Eat Arai Dee</a>
+        <a class="navbar-brand" href="bycategory.html">By Category</a>
     </div>
-    <div class="container" id="content">
-        <h2>Random Meal</h2>
-        <div id="mealDetails"></div>
-        <button id="randomMealButton">Get Random Meal</button>
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div id="mealDetails"></div>
+            <button class="btn btn-light btn-lg btn-block" id="randomMealButton">Random Meal</button>
+        </div>
     </div>
     <script>
         function showRandomPage() {
