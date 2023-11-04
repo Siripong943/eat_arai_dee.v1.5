@@ -1,9 +1,7 @@
-// API Configuration
 const API = {
     randomMeal: 'https://www.themealdb.com/api/json/v1/1/random.php'
 };
 
-// Function to Get a Random Meal
 async function getMealRandom() {
     try {
         const { data } = await axios.get(API.randomMeal);
@@ -14,11 +12,16 @@ async function getMealRandom() {
 
         data.meals.forEach((e) => {
             for (let [key, value] of Object.entries(e)) {
+              
                 if (key.indexOf('strIngredient') !== -1) {
                     if (value !== null && value !== '') cleanMeal.ingredients.push(value);
-                } else if (key.indexOf('strMeasure') !== -1) {
+                } 
+               
+                else if (key.indexOf('strMeasure') !== -1) {
                     if (value !== null && value !== '' && value !== ' ') cleanMeal.measurements.push(value);
-                } else if (value !== null && value !== '') cleanMeal[key] = value;
+                } 
+           
+                else if (value !== null && value !== '') cleanMeal[key] = value;
             }
         });
 
@@ -28,17 +31,18 @@ async function getMealRandom() {
     }
 }
 
-// Function to Display Random Meal
 async function displayRandomMeal() {
     try {
         const randomMeal = await getMealRandom();
         const mealDetailsDiv = document.getElementById('mealDetails');
         mealDetailsDiv.innerHTML = `
             <div class="meal-details">
-                <h3>${randomMeal.strMeal}</h3>
+                <h3><strong>${randomMeal.strMeal}</strong></h3>
                 <p><strong>Category:</strong> ${randomMeal.strCategory}</p>
                 <p><strong>Area:</strong> ${randomMeal.strArea}</p>
-                <img src="${randomMeal.strMealThumb}" alt="${randomMeal.strMeal}" style="max-width: 300px;">
+                <div class="img-container">
+                    <img src="${randomMeal.strMealThumb}" alt="${randomMeal.strMeal}" class="meal-img">
+                </div>
                 <h4>Ingredients</h4>
                 <ul class="ingredients-list">
                     ${randomMeal.ingredients.map((ingredient, index) => `<li>${ingredient} - ${randomMeal.measurements[index]}</li>`).join('')}
@@ -52,7 +56,6 @@ async function displayRandomMeal() {
     }
 }
 
-// Event Listener for the Button Click
 document.addEventListener('DOMContentLoaded', function() {
     const randomMealButton = document.getElementById('randomMealButton');
     randomMealButton.addEventListener('click', displayRandomMeal);

@@ -83,3 +83,78 @@ button:focus {
     max-width: 100%;
     height: auto;
 }
+
+.container {
+    max-width: 800px;
+    overflow-x: hidden; 
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+
+body {
+    background-image: url('https://cdn.dribbble.com/users/3951514/screenshots/7288432/media/866b49d81c982fdecd5a22de44c5e677.gif'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+}
+
+#mealDetails {
+    background-color: rgba(29, 29, 29, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.meal-details {
+
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+.meal-img {
+    max-width: 100%;
+    height: auto;
+    border: 4px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ingredients-list {
+    list-style-type: circle ;
+    padding: 0;
+    text-align: left;
+}
+
+.img-container {
+    margin-bottom: 20px;
+}
+
+.meal-image {
+    max-width: 100px; 
+    max-height: 100px;
+}
+
+#mealDetails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; 
+}
+
+.meal-item {
+    flex: 0 0 calc(33.33% - 20px);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.meal-image {
+    width: 100%;
+    height: auto;
+    max-width: 150px; 
+    max-height: 150px;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>By Category</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css"> 
+    <style>
+        .navbar {
+            justify-content: flex-start;
+        }
+        body {
+            margin-bottom: 50px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Eat Arai Dee</a>
+        <a class="navbar-brand" href="bycategory.html">By Category</a>
+        <select id="categorySelector" class="form-control"></select>
+    </div>
+    
+        <center><div style="margin-top: 20px;">
+            <div class="col-lg-6">
+                <div id="mealDetails"></div>
+            </div>
+        </div></center>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="bycategory.js"></script>
+</body>
+</html>
